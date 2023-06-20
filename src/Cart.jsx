@@ -1,10 +1,24 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link, Outlet, useNavigate, useParams } from 'react-router-dom';
  const Cart=()=>{
     return(
-        <div>
-            <h1>Cart</h1>
-
-        </div>
+        
+        <nav>
+   <ul>
+     <li>
+       <Link to="/">Home</Link>
+     </li>
+     <li>
+       <Link to="/cart">Cart</Link>
+     </li>
+     <li>
+       <Link to="/manager">Manager</Link>
+     </li>
+     <li>
+       <Link to="/products">Products list</Link>
+     </li>
+   </ul>
+ </nav>
     )
  }
  export default Cart;

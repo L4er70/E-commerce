@@ -1,4 +1,5 @@
 import React from "react";
+import './ProductCard.css'
  
 const Product=(props)=>{
     const {image,title,price}=props;
