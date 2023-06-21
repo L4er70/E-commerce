@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ShopContext } from './ShopContext';
 
-const CreateProduct = ({ addProduct }) => {
+const CreateProduct = () => {
+    const { allItems,addProduct }=useContext(ShopContext);
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Process the form data and create a new product
@@ -12,15 +14,15 @@ const CreateProduct = ({ addProduct }) => {
       <form onSubmit={handleFormSubmit}>
         <label>
           Title:
-          <input type="text" />
+          <input type="text" defaultValue={allItems.title}/>
         </label>
         <br />
         <label>
           Price:
-          <input type="text" />
+          <input type="text" defaultValue={allItems.price}/>
         </label>
         <br />
-        <button type="submit">Create</button>
+        <button type="submit" onClick={addProduct}>Create</button>
       </form>
     </div>
   );

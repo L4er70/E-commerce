@@ -5,8 +5,11 @@ import { useNavigate } from 'react-router-dom';
 const Manager = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleEditNavigate = () => {
     navigate('edit/:id');}
+    const handleCreateNavigate=()=>{
+      navigate('create');
+    }
   const { allItems, deleteProduct, editProduct, navigateToEdit } = useContext(ShopContext);
   return (
     <div>
@@ -17,9 +20,12 @@ const Manager = () => {
           <h3>{product.title}</h3>
           <p>Price: {product.price}</p>
           <button onClick={() => deleteProduct(product.id)}>Delete</button>
-          <button onClick={() => handleClick(product.id)}>Edit</button>
+          <button onClick={() => handleEditNavigate(product.id)}>Edit</button>
         </div>
       ))}
+      <div>
+        <button onClick={handleCreateNavigate}>Create new</button>
+      </div>
     </div>
   );
 };
