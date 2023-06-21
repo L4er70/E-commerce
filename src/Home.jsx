@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
+import Products from "./Products";
 import './Home.css'
 
 const Home = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/products');
+    navigate('shop/products');
   };
 
   return (
