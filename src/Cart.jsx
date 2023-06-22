@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ShopContext } from './ShopContext';
+import "./Cart.css";
 
 const Cart = () => {
   const { cartItems, addQuantity, decreaseQuantity } = useContext(ShopContext);
@@ -15,8 +16,11 @@ const Cart = () => {
   return (
     <div>
       <h2>Cart</h2>
+      <div className='container-of-cart'>
+      
       {cartItems.map((item) => (
-        <div key={item.id}>
+        <div className='product' key={item.id}>
+          <img src={item.image}></img>
           <h3>{item.title}</h3>
           <p>Price: {item.price}</p>
           <p>Quantity: {item.quantity}</p>
@@ -24,7 +28,8 @@ const Cart = () => {
           <button onClick={() => addQuantity(item.id)}>Increase</button>
         </div>
       ))}
-      <p>Total Price: {calculateTotalPrice(cartItems)}</p>
+      </div>
+      <p className='totalPrice'>Total Price: {calculateTotalPrice(cartItems)}</p>
     </div>
   );
 };

@@ -8,7 +8,17 @@ export const ShopProvider = ({ children }) => {
     
     { id: '1', title: 'Product 1',image:'https://assets.shpresa.al/shop/2023/05/99c07fe0-cel1942-bl-4-360x360.jpg', price: 10, quantity: 1 },
     { id: '2', title: 'Product 2',image:'https://assets.shpresa.al/shop/2022/09/5341152f-cel1351-b-360x360.jpg', price: 20, quantity: 1 },
-    { id: '3', title: 'Product 3', image:'https://assets.shpresa.al/shop/2022/10/6f18a6e5-cng3019-gn-360x360.jpg',price: 30, quantity: 1 },
+    { id: '3', title: 'Product 4', image:'https://assets.shpresa.al/shop/2022/10/6f18a6e5-cng3019-gn-360x360.jpg',price: 30, quantity: 1 },
+    { id: '4', title: 'Product 5', image:'https://assets.shpresa.al/shop/2023/02/9339a99e-cel1449-b-360x360.jpg',price: 30, quantity: 1 },
+    { id: '5', title: 'Product 6', image:'https://assets.shpresa.al/shop/2023/06/37725be7-sas1000-1-360x360.jpg',price: 30, quantity: 1 },
+    { id: '6', title: 'Product 8', image:'https://assets.shpresa.al/shop/2022/06/9d43d49d-ue43bu8572uxxh-360x360.jpg',price: 30, quantity: 1 },
+    { id: '7', title: 'Product 9', image:'https://assets.shpresa.al/shop/2022/06/9d43d49d-ue43bu8572uxxh-360x360.jpg',price: 30, quantity: 1 },
+    { id: '8', title: 'Product 7', image:'https://assets.shpresa.al/shop/2021/11/d20497b6-dun1122-gr-3-360x360.jpg',price: 30, quantity: 1 },
+    { id: '9', title: 'Product 7', image:'https://assets.shpresa.al/shop/2022/06/9d43d49d-ue43bu8572uxxh-360x360.jpg',price: 30, quantity: 1 },
+    { id: '10', title: 'Product 7', image:'https://assets.shpresa.al/shop/2022/06/9d43d49d-ue43bu8572uxxh-360x360.jpg',price: 30, quantity: 1 },
+    { id: '11', title: 'Product 7', image:'https://assets.shpresa.al/shop/2019/12/fae0ef1d-dun-s2-360x360.jpg',price: 30, quantity: 1 },
+    { id: '12', title: 'Product 7', image:'https://assets.shpresa.al/shop/2020/12/7b7e05b2-abt098-1-360x360.jpg',price: 30, quantity: 1 },
+    { id: '13', title: 'Product 7', image:'https://assets.shpresa.al/shop/2022/06/9d43d49d-ue43bu8572uxxh-360x360.jpg',price: 30, quantity: 1 }
   ]);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
