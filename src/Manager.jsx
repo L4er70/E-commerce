@@ -15,6 +15,7 @@ const Manager = () => {
   return (
     <div className='container'>
       <h2>Manager</h2>
+      <div className='product-list'>
       {allItems.map((product) => (
         <div className='product' key={product.id}>
           <img src={product.image}></img>
@@ -24,8 +25,11 @@ const Manager = () => {
           <button onClick={() => handleEditNavigate(product.id)}>Edit</button>
         </div>
       ))}
-      <div>
-        <button onClick={handleCreateNavigate}>Create new</button>
+      </div>
+       <div className="footer">
+        <button className="manager-button" onClick={handleCreateNavigate}>
+          Create new
+        </button>
       </div>
     </div>
   );
