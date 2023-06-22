@@ -13,29 +13,22 @@ export const ShopProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   
-  const addProduct = (product) => {
-    // Check if the product is already in the cart
-    const existingProduct = allItems.find((item) => item.id === product.id);
+  const addProduct = (newProduct) => {
+    // Generate a unique ID for the new product
+    const newProductId = Date.now().toString();
 
-    if (existingProduct) {
-      // If the product already exists, increase the quantity
-      const updatedItems = allItems.map((item) => {
-        if (item.id === product.id) {
-          return { ...item, quantity: item.quantity + 1 };
-        }
-        return item;
-      });
+    // Create a new product object with the generated ID
+    const product = {
+      id: newProductId,
+      title: newProduct.title,
+      price: newProduct.price,
+      quantity: 1,
+    };
 
-      setAllItems(updatedItems);
-    } else {
-      // If the product is new, add it to the cart
-      const newItem = { ...product, quantity: 1 };
-      setAllItems([...allItems, newItem]);
-    }
-
-    // Update total price
-    setTotalPrice(totalPrice + product.price);
+    // Update the allItems state by adding the new product
+    setAllItems((prevItems) => [...prevItems, product]);
   };
+
 
   const addProductToCart = (product) => {
     // Check if the product is already in the cart
@@ -137,6 +130,7 @@ console.log(allItems);
         editProduct,
         addQuantity,
         decreaseQuantity,
+        addProduct
       }}
     >
       {children}
