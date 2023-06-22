@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ShopContext } from './ShopContext';
 import { useNavigate } from 'react-router-dom';
+import "./Products.css";
 
 const Manager = () => {
   const navigate = useNavigate();
@@ -12,10 +13,10 @@ const Manager = () => {
     }
   const { allItems, deleteProduct, editProduct, navigateToEdit } = useContext(ShopContext);
   return (
-    <div>
+    <div className='container'>
       <h2>Manager</h2>
       {allItems.map((product) => (
-        <div key={product.id}>
+        <div className='product' key={product.id}>
           <img src={product.image}></img>
           <h3>{product.title}</h3>
           <p>Price: {product.price}</p>

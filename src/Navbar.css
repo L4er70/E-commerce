@@ -1,0 +1,28 @@
+nav {
+    background-color: #f5f5f5;
+    padding: 5px 10px; /* Reduce top and bottom padding */
+  }
+  
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0; /* Remove margin */
+  }
+  
+  li {
+    margin-right: 5px; /* Reduce right margin */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px; /* Adjust font size */
+  }
+  
+  a:hover {
+    color: #555;
+  }
+  

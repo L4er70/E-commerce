@@ -1,15 +1,16 @@
 // Products.jsx
 import React, { useContext } from 'react';
 import { ShopContext } from './ShopContext';
+import "./Products.css"
 
 const Products = () => {
   const { allItems, addProductToCart } = useContext(ShopContext);
 
   return (
-    <div>
+    <div className='container'>
       <h2>Products</h2>
       {allItems.map((product) => (
-        <div key={product.id}>
+        <div className='product' key={product.id}>
           <img src={product.image}></img>
           <h3>{product.title}</h3>
           <p>Price: {product.price}</p>

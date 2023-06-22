@@ -6,9 +6,9 @@ export const ShopContext = createContext();
 export const ShopProvider = ({ children }) => {
   const [allItems, setAllItems] = useState([
     
-    { id: '1', title: 'Product 1',image:'skincare.jpg', price: 10, quantity: 1 },
-    { id: '2', title: 'Product 2',image:'skincare.jpg', price: 20, quantity: 1 },
-    { id: '3', title: 'Product 3', image:'skincare.jpg',price: 30, quantity: 1 },
+    { id: '1', title: 'Product 1',image:'https://assets.shpresa.al/shop/2023/05/99c07fe0-cel1942-bl-4-360x360.jpg', price: 10, quantity: 1 },
+    { id: '2', title: 'Product 2',image:'https://assets.shpresa.al/shop/2022/09/5341152f-cel1351-b-360x360.jpg', price: 20, quantity: 1 },
+    { id: '3', title: 'Product 3', image:'https://assets.shpresa.al/shop/2022/10/6f18a6e5-cng3019-gn-360x360.jpg',price: 30, quantity: 1 },
   ]);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
