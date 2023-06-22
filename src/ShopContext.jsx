@@ -31,6 +31,7 @@ export const ShopProvider = ({ children }) => {
     const product = {
       id: newProductId,
       title: newProduct.title,
+      image: newProduct.image,
       price: newProduct.price,
       quantity: 1,
     };
@@ -113,21 +114,31 @@ console.log(allItems);
   };
 
   const decreaseQuantity = (productId) => {
-    // Decrement the quantity of the product in cartItems
-    const updatedCartItems = cartItems.map((item) => {
-      if (item.id === productId) {
-        return { ...item, quantity: item.quantity - 1 };
-      }
-      return item;
-    });
-    setCartItems(updatedCartItems);
-
-    // Update total price
+    // Find the product in cartItems
     const existingCartItem = cartItems.find((item) => item.id === productId);
+  
     if (existingCartItem) {
+      let updatedCartItems;
+      if (existingCartItem.quantity === 1) {
+        // Remove the product from cartItems if quantity becomes zero
+        updatedCartItems = cartItems.filter((item) => item.id !== productId);
+      } else {
+        // Decrement the quantity of the product in cartItems
+        updatedCartItems = cartItems.map((item) => {
+          if (item.id === productId) {
+            return { ...item, quantity: item.quantity - 1 };
+          }
+          return item;
+        });
+      }
+  
+      setCartItems(updatedCartItems);
+  
+      // Update total price
       setTotalPrice(totalPrice - existingCartItem.price);
     }
   };
+  
 
   return (
     <ShopContext.Provider

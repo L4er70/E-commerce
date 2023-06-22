@@ -8,7 +8,6 @@
 .product-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .product {
@@ -17,6 +16,7 @@
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  margin: 10px;
 }
 
   .footer {
