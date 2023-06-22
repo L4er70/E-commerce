@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 const Manager = () => {
   const navigate = useNavigate();
 
-  const handleEditNavigate = () => {
-    navigate('edit/:id');}
+  const handleEditNavigate = (id) => {
+    navigate('edit/'+id);}
     const handleCreateNavigate=()=>{
       navigate('create');
     }

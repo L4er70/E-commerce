@@ -5,7 +5,7 @@ export const ShopContext = createContext();
 
 export const ShopProvider = ({ children }) => {
   const [allItems, setAllItems] = useState([
-    // Initial list of products
+    
     { id: '1', title: 'Product 1',image:'skincare.jpg', price: 10, quantity: 1 },
     { id: '2', title: 'Product 2',image:'skincare.jpg', price: 20, quantity: 1 },
     { id: '3', title: 'Product 3', image:'skincare.jpg',price: 30, quantity: 1 },
@@ -79,6 +79,7 @@ export const ShopProvider = ({ children }) => {
 
   const editProduct = (productId, updatedProduct) => {
     // Update the product in allItems
+    console.log(updatedProduct,"updated products",productId,"productID");
     const updatedAllItems = allItems.map((item) => {
       if (item.id === productId) {
         return { ...item, title: updatedProduct.title, price: updatedProduct.price };
@@ -86,20 +87,9 @@ export const ShopProvider = ({ children }) => {
       return item;
     });
     setAllItems(updatedAllItems);
-
+console.log(allItems);
     // If the edited product is in cartItems, update its price
-    const existingCartItem = cartItems.find((item) => item.id === productId);
-    if (existingCartItem) {
-      const updatedCartItems = cartItems.map((item) => {
-        if (item.id === productId) {
-          const newTotalPrice =
-            totalPrice - existingCartItem.price * existingCartItem.quantity;
-          return { ...item, price: updatedProduct.price };
-        }
-        return item;
-      });
-      setCartItems(updatedCartItems);
-    }
+   
   };
 
   const addQuantity = (productId) => {
